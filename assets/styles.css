@@ -1,0 +1,25 @@
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  align-items: center;
+}
+
+.text-main {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.text-main h1 {
+  color: white;
+}
+
+.input-form {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=styles.css.map */
