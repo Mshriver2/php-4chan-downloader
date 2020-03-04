@@ -2,8 +2,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-image: linear-gradient(to bottom, black, #6a6a6a);
   align-items: center;
+  width: 100%;
 }
 
 .text-main {
@@ -14,12 +15,38 @@
 }
 .text-main h1 {
   color: white;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .input-form {
   display: flex;
   text-align: center;
   flex-direction: column;
+}
+.input-form p {
+  margin-top: 20px;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+}
+.input-form input[type=text] {
+  margin-bottom: 20px;
+}
+.input-form select {
+  font-family: "Oswald", sans-serif;
+}
+.input-form .submit-button {
+  background-color: grey;
+  border: 1px solid black;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 50%;
+}
+.input-form .submit-button:hover {
+  background-color: white;
+  color: black;
 }
 
 /*# sourceMappingURL=styles.css.map */
