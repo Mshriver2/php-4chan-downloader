@@ -11,3 +11,4 @@ Drag folders content or folder into your web servers root.
 * find out how to download img from url to a temp folder on webserver
 * build file zip method in imageScrape Class
 * allow multiple threads to be downloaded at once
+* create image preview box, to see images before download
