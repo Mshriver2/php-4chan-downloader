@@ -1,16 +1,18 @@
 <?php
-    require_once 'vendor/autoload.php';
+//includes imageScrape class
+include("imageScrape.php");
 
-    use DiDom\Document;
+    //runs if submit button is pressed
+    if(isset($_POST['submit'])){
 
-    $document = new Document('http://boards.4channel.org/g/thread/74884957', true);
+        //stores all post values into vars
+        $chanSelection = $_POST['chans'];
+        $boardSelection = $_POST['boards'];
+        $threadURL = $_POST['thread-url'];
 
-    $posts = $document->find('a[href*=i.4cdn.org]');
-
-    foreach($posts as $post) {
-        //echo "http://i.4cdn.org/g/" . $post->text(), "\n";
+        //executes imgGrab method from imageScrape class, passing in properties
+        $grabIT = $imgscrape->imgGrab($chanSelection, $boardSelection, $threadURL);
     }
-    //echo "completed";
 
 ?>
 
@@ -25,12 +27,13 @@
 
 
              <form class="input-form" action="" method="post">
-
+                 <p>Please select 4chan or 4channel.</p>
                  <select id="chanSelector" name="chans">
                     <option value="4chan">4chan</option>
                     <option value="4channel">4channel</option>
                  </select>
 
+                 <p>Please select a board letter.</p>
                  <select id="boardSelector" name="boards">
                     <option value="g">g</option>
                     <option value="b">b</option>
@@ -42,8 +45,9 @@
                     <option value="lit">lit</option>
                  </select>
 
+                 <p>Please enter the url for the thread.</p>
                  <input type="text" name="thread-url" value="">
-                 <input type="submit" name="submit" value="Submit">
+                 <input type="button" class="submit-button" name="submit" value="Submit">
              </form>
 
 
