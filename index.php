@@ -1,17 +1,23 @@
 <?php
+error_reporting(E_ALL);
 //includes imageScrape class
 include("imageScrape.php");
 
+
     //runs if submit button is pressed
-    if(isset($_POST['submit'])){
+    if(isset($_POST["submit"])){
 
         //stores all post values into vars
         $chanSelection = $_POST['chans'];
         $boardSelection = $_POST['boards'];
         $threadURL = $_POST['thread-url'];
 
+        $kektest = new ImageScrape();
+
         //executes imgGrab method from imageScrape class, passing in properties
-        $grabIT = $imgscrape->imgGrab($chanSelection, $boardSelection, $threadURL);
+        //$grabIT = $imgscrape->imgGrab($chanSelection, $boardSelection, $threadURL);
+        $grabIT = $kektest->downloadArray();
+        echo $grabIT;
     }
 
 ?>
@@ -26,7 +32,7 @@ include("imageScrape.php");
              </div>
 
 
-             <form class="input-form" action="" method="post">
+             <form class="input-form" method="post">
                  <p>Please select 4chan or 4channel.</p>
                  <select id="chanSelector" name="chans">
                     <option value="4chan">4chan</option>
@@ -47,7 +53,7 @@ include("imageScrape.php");
 
                  <p>Please enter the url for the thread.</p>
                  <input type="text" name="thread-url" value="">
-                 <input type="button" class="submit-button" name="submit" value="Submit">
+                 <input type="submit" class="submit-button" name="submit" value="Submit">
              </form>
 
 
